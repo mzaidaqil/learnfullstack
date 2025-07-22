@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Clock</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="bundle.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="title">World Clock</h1>
+            <p class="subtitle">Stay on time, anywhere in the world</p>
+        </header>
+        
+        <main class="time-display">
+            <div class="current-time-card">
+                <div class="time-wrapper">
+                    <div id="current-time" class="time">Loading...</div>
+                    <div class="timezone-info">
+                        <span class="timezone-label">Timezone:</span>
+                        <span id="current-timezone" class="timezone">Loading...</span>
+                    </div>
+                </div>
+                <button class="change-timezone-btn" data-custom-open="modal-1">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polyline points="12,6 12,12 16,14"></polyline>
+                    </svg>
+                    Change Timezone
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal for timezone selection -->
+    <div id="modal-1" aria-hidden="true" class="modal">
+        <div tabindex="-1" data-custom-close class="modal-overlay">
+            <div role="dialog" aria-modal="true" aria-labelledby="modal-1-title" class="modal-container">
+                <header class="modal-header">
+                    <h2 id="modal-1-title" class="modal-title">Select Timezone</h2>
+                    <button aria-label="Close modal" data-custom-close class="modal-close">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                    </button>
+                </header>
+                
+                <div id="modal-1-content" class="modal-content">
+                    <p class="modal-description">Choose your preferred timezone from the list below:</p>
+                    <div class="select-wrapper">
+                        <select id="timezone-select" class="timezone-select">
+                            <option value="America/New_York">New York (EST/EDT)</option>
+                            <option value="Malaysia/Kuala Lumpur">Kuala Lumpur (GMT8+)</option>
+                            <option value="America/Los_Angeles">Los Angeles (PST/PDT)</option>
+                            <option value="America/Chicago">Chicago (CST/CDT)</option>
+                            <option value="America/Denver">Denver (MST/MDT)</option>
+                            <option value="Europe/London">London (GMT/BST)</option>
+                            <option value="Europe/Paris">Paris (CET/CEST)</option>
+                            <option value="Europe/Berlin">Berlin (CET/CEST)</option>
+                            <option value="Europe/Rome">Rome (CET/CEST)</option>
+                            <option value="Asia/Tokyo">Tokyo (JST)</option>
+                            <option value="Asia/Shanghai">Shanghai (CST)</option>
+                            <option value="Asia/Kolkata">Mumbai (IST)</option>
+                            <option value="Asia/Dubai">Dubai (GST)</option>
+                            <option value="Australia/Sydney">Sydney (AEST/AEDT)</option>
+                            <option value="Pacific/Auckland">Auckland (NZST/NZDT)</option>
+                            <option value="America/Sao_Paulo">São Paulo (BRT/BRST)</option>
+                            <option value="Africa/Cairo">Cairo (EET/EEST)</option>
+                        </select>
+                    </div>
+                    <div class="modal-actions">
+                        <button id="apply-timezone" class="btn btn-primary">Apply</button>
+                        <button data-custom-close class="btn btn-secondary">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
